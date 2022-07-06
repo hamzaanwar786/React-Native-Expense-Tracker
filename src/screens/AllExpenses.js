@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ExpenseContext} from '../store/expense-context';
 
 import ExpensesOutput from '../components/ExpensesOutput/ExpensesOutput';
 
 const AllExpenses = () => {
-  return <ExpensesOutput expensePeriod={'Today'} />;
+  const expenseCtx = useContext(ExpenseContext);
+
+  return (
+    <ExpensesOutput expenses={expenseCtx.expense} expensePeriod={'Today'} />
+  );
 };
 
 export default AllExpenses;
