@@ -7,7 +7,11 @@ const AllExpenses = () => {
   const expenseCtx = useContext(ExpenseContext);
 
   return (
-    <ExpensesOutput expenses={expenseCtx.expense} expensePeriod={'Today'} />
+    <ExpensesOutput
+      expenses={expenseCtx.expense}
+      expensePeriod={'Today'}
+      fallBackText={'No expense registered!!'}
+    />
   );
 };
 
